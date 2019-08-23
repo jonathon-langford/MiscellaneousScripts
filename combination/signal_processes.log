@@ -1,53 +1,52 @@
->> signal processes in channel  hgg
-       WH_had_hgg_PTJET1_GT200
-       WH_had_hgg_REST
-       WH_had_hgg_VBFTOPO_JET3
-       WH_had_hgg_VBFTOPO_JET3VETO
-       WH_had_hgg_VH2JET
-       WH_lep_hgg_PTV_0_150
-       WH_lep_hgg_PTV_150_250_0J
-       WH_lep_hgg_PTV_150_250_GE1J
-       WH_lep_hgg_PTV_GT250
-       ZH_had_hgg_PTJET1_GT200
-       ZH_had_hgg_REST
-       ZH_had_hgg_VBFTOPO_JET3
-       ZH_had_hgg_VH2JET
-       ZH_lep_hgg_PTV_0_150
-       ZH_lep_hgg_PTV_150_250_0J
-       ZH_lep_hgg_PTV_150_250_GE1J
-       ZH_lep_hgg_PTV_GT250
+       WH_had_PTJET1_GT200_hgg
+       WH_had_REST_hgg
+       WH_had_VBFTOPO_JET3VETO_hgg
+       WH_had_VBFTOPO_JET3_hgg
+       WH_had_VH2JET_hgg
+       WH_lep_PTV_0_150_hgg
+       WH_lep_PTV_150_250_0J_hgg
+       WH_lep_PTV_150_250_GE1J_hgg
+       WH_lep_PTV_GT250_hgg
+       ZH_had_PTJET1_GT200_hgg
+       ZH_had_REST_hgg
+       ZH_had_VBFTOPO_JET3_hgg
+       ZH_had_VH2JET_hgg
+       ZH_lep_PTV_0_150_hgg
+       ZH_lep_PTV_150_250_0J_hgg
+       ZH_lep_PTV_150_250_GE1J_hgg
+       ZH_lep_PTV_GT250_hgg
        bbH_hgg
-       ggH_hgg_0J
-       ggH_hgg_1J_PTH_0_60
-       ggH_hgg_1J_PTH_120_200
-       ggH_hgg_1J_PTH_60_120
-       ggH_hgg_1J_PTH_GT200
-       ggH_hgg_GE2J_PTH_0_60
-       ggH_hgg_GE2J_PTH_120_200
-       ggH_hgg_GE2J_PTH_60_120
-       ggH_hgg_GE2J_PTH_GT200
-       ggH_hgg_VBFTOPO_JET3
-       ggH_hgg_VBFTOPO_JET3VETO
+       ggH_0J_hgg
+       ggH_1J_PTH_0_60_hgg
+       ggH_1J_PTH_120_200_hgg
+       ggH_1J_PTH_60_120_hgg
+       ggH_1J_PTH_GT200_hgg
+       ggH_GE2J_PTH_0_60_hgg
+       ggH_GE2J_PTH_120_200_hgg
+       ggH_GE2J_PTH_60_120_hgg
+       ggH_GE2J_PTH_GT200_hgg
+       ggH_VBFTOPO_JET3VETO_hgg
+       ggH_VBFTOPO_JET3_hgg
        ggZH_hgg
-       qqH_hgg_PTJET1_GT200
-       qqH_hgg_REST
-       qqH_hgg_VBFTOPO_JET3
-       qqH_hgg_VBFTOPO_JET3VETO
-       qqH_hgg_VH2JET
+       qqH_PTJET1_GT200_hgg
+       qqH_REST_hgg
+       qqH_VBFTOPO_JET3VETO_hgg
+       qqH_VBFTOPO_JET3_hgg
+       qqH_VH2JET_hgg
        tHW_hgg
        tHq_hgg
        ttH_hgg
->> signal processes in channel  hmm
-       WMinusH
-       WPlusH
-       ZH
-       ggH
-       qqH
-       ttH
->> signal processes in channel  htt
-       ggH
-       qqH
->> signal processes in channel  hww
+>> signal processes after renaming in channel  hmm
+       WMinusH_hmm
+       WPlusH_hmm
+       ZH_hmm
+       ggH_hmm
+       qqH_hmm
+       ttH_hmm
+>> signal processes after renaming in channel  htt
+       ggH_htt_htt
+       qqH_htt_htt
+>> signal processes after renaming in channel  hww
        WH_had_fwd_htt
        WH_had_fwd_hww
        WH_had_htt
@@ -78,32 +77,32 @@
        qqH_hww
        ttH_fwd_hww
        ttH_hww
->> signal processes in channel  hzz
-       BBH
-       TH
-       TTH
-       VBF_2j_mjj_350_700_2j
-       VBF_2j_mjj_GT350_3j
-       VBF_2j_mjj_GT700_2j
-       VBF_GT200
-       VBF_GT200_VHori
-       VBF_Rest
-       VBF_Rest_VHori
-       VH_Had
-       VH_Had_VBFori
-       VH_Lep_0_150
-       VH_Lep_GT150
-       ggH_0j_0_10
-       ggH_0j_10_200
-       ggH_1j_0_60
-       ggH_1j_120_200
-       ggH_1j_60_120
-       ggH_2j_0_60
-       ggH_2j_120_200
-       ggH_2j_60_120
-       ggH_GT200
-       ggH_VBF
->> signal processes in channel  tth_hbb
+>> signal processes after renaming in channel  hzz
+       VH_had_VBFori_hzz
+       VH_had_hzz
+       VH_lep_PTV_0_150_hzz
+       VH_lep_PTV_GT150_hzz
+       bbH_hzz
+       ggH_0J_PTH_0_10_hzz
+       ggH_0J_PTH_10_200_hzz
+       ggH_1J_PTH_0_60_hzz
+       ggH_1J_PTH_120_200_hzz
+       ggH_1J_PTH_60_120_hzz
+       ggH_2J_PTH_0_60_hzz
+       ggH_2J_PTH_120_200_hzz
+       ggH_2J_PTH_60_120_hzz
+       ggH_PTH_GT200_hzz
+       ggH_VBF_hzz
+       qqH_2j_mjj_350_700_2j_hzz
+       qqH_2j_mjj_GT350_3j_hzz
+       qqH_2j_mjj_GT700_2j_hzz
+       qqH_GT200_VHori_hzz
+       qqH_GT200_hzz
+       qqH_Rest_VHori_hzz
+       qqH_Rest_hzz
+       tH_hzz
+       ttH_hzz
+>> signal processes after renaming in channel  tth_hbb
        ttH_hbb
        ttH_hcc
        ttH_hgg
@@ -112,7 +111,7 @@
        ttH_hww
        ttH_hzg
        ttH_hzz
->> signal processes in channel  tth_hgg
+>> signal processes after renaming in channel  tth_hgg
        WH_had_hgg
        WH_lep_hgg
        ZH_had_hgg
@@ -123,23 +122,23 @@
        tHW_hgg
        tHq_hgg
        ttH_hgg
->> signal processes in channel  tth_multilepton
+>> signal processes after renaming in channel  tth_multilepton
+       ttH_faketau_htt
+       ttH_faketau_hww
+       ttH_faketau_hzz
+       ttH_gentau_htt
+       ttH_gentau_hww
+       ttH_gentau_hzz
        ttH_hmm
-       ttH_hot
        ttH_htt
-       ttH_htt_faketau
-       ttH_htt_gentau
        ttH_hww
-       ttH_hww_faketau
-       ttH_hww_gentau
+       ttH_hzg
        ttH_hzz
-       ttH_hzz_faketau
-       ttH_hzz_gentau
->> signal processes in channel  vhbb
-       WH_hbb
-       ZH_hbb
-       ggZH_hbb
->> signal processes in channel  vhbb2017
-       WH_hbb
-       ZH_hbb
-       ggZH_hbb
+>> signal processes after renaming in channel  vhbb
+       WH_lep_hbb
+       ZH_lep_hbb
+       ggZH_lep_hbb
+>> signal processes after renaming in channel  vhbb2017
+       WH_lep_hbb
+       ZH_lep_hbb
+       ggZH_lep_hbb
