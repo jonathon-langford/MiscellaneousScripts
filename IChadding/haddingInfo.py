@@ -12,6 +12,8 @@ sigs['tH'] = 'TH'
 sigs['WH'] = 'WH'
 sigs['ZH'] = 'ZH'
 
+from os import system
+
 def run(cmd):
   print cmd
   system(cmd)

@@ -23,7 +23,7 @@ def writeHaddFile(currentDir):
   run('chmod +x hadd_all.sh')
 
 def writeSplitFile(currentDir):
-  splitCmd = 'python $CMSSW_BASE/src/flashgg/Systematics/scripts/split_all.py stage1p2'
+  splitCmd = 'python $CMSSW_BASE/src/flashgg/Systematics/scripts/split_all.py --doStage1p2'
   with open('split_all.sh','w') as outFile:
     outFile.write('#!/bin/bash \n')
     outFile.write('cd %s \n'%cmsswDir)
