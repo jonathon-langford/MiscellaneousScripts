@@ -1,0 +1,25 @@
+imax *
+jmax *
+kmax *
+
+shapes     diphoton_2016      cat_dipho_subleadEta      output_MC_2016.root      cms_hgg_13TeV:diphoton_2016_dipho_subleadEta
+shapes     gjet_2016          cat_dipho_subleadEta      output_MC_2016.root      cms_hgg_13TeV:gjet_2016_dipho_subleadEta
+shapes     qcd_2016           cat_dipho_subleadEta      output_MC_2016.root      cms_hgg_13TeV:qcd_2016_dipho_subleadEta
+shapes     diphoton_2017      cat_dipho_subleadEta      output_MC_2017.root      cms_hgg_13TeV:diphoton_2017_dipho_subleadEta
+shapes     gjet_2017          cat_dipho_subleadEta      output_MC_2017.root      cms_hgg_13TeV:gjet_2017_dipho_subleadEta
+shapes     qcd_2017           cat_dipho_subleadEta      output_MC_2017.root      cms_hgg_13TeV:qcd_2017_dipho_subleadEta
+shapes     diphoton_2018      cat_dipho_subleadEta      output_MC_2018.root      cms_hgg_13TeV:diphoton_2018_dipho_subleadEta
+shapes     gjet_2018          cat_dipho_subleadEta      output_MC_2018.root      cms_hgg_13TeV:gjet_2018_dipho_subleadEta
+shapes     qcd_2018           cat_dipho_subleadEta      output_MC_2018.root      cms_hgg_13TeV:qcd_2018_dipho_subleadEta
+shapes     data_obs           cat_dipho_subleadEta      output_data.root         cms_hgg_13TeV:data_dipho_subleadEta
+
+bin cat_dipho_subleadEta
+observation -1.
+bin cat_dipho_subleadEta cat_dipho_subleadEta cat_dipho_subleadEta cat_dipho_subleadEta cat_dipho_subleadEta cat_dipho_subleadEta cat_dipho_subleadEta cat_dipho_subleadEta cat_dipho_subleadEta
+process diphoton_2016 gjet_2016 qcd_2016 diphoton_2017 gjet_2017 qcd_2017 diphoton_2018 gjet_2018 qcd_2018
+process -8 -7 -6 -5 -4 -3 -2 -1 0
+rate -1 -1 -1 -1 -1 -1 -1 -1 -1
+
+lumi_norm_2016 rateParam cat_dipho_subleadEta *_2016 35.9
+lumi_norm_2017 rateParam cat_dipho_subleadEta *_2017 41.5
+lumi_norm_2018 rateParam cat_dipho_subleadEta *_2018 59.7
