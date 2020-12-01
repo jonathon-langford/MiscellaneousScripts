@@ -51,6 +51,11 @@ def extractDelta(_data,_bins,_svars):
 
 def Translate(name, ndict):
     return ndict[name] if name in ndict else name
+
+def FixForLatex(name):  
+    return name.replace("_","\_")
+  
+  
 def LoadTranslations(jsonfilename):
     with open(jsonfilename) as jsonfile:
         return json.load(jsonfile)
@@ -179,7 +184,7 @@ cols += " & {\\tiny{Total}}"
 fout.write("  %s \\\\ \\hline \n"%cols)
 # Loop over stxs ibins
 for sb in stxs_bins:
-  col = "{\\tiny{%s}}"%Translate(sb,translateBins)
+  col = "{\\tiny{%s}}"% FixForLatex(Translate(sb,translateBins))
   for NP in NJetParams: 
     x = 100*extractJetNPfromBin(data,NP,sb)
     if x == 0: col += " & -"
@@ -193,4 +198,80 @@ for sb in stxs_bins:
 fout.write("\\end{tabular}\n")
 fout.close()
 
+
+
+
+
+fout = open("%s/summary_table_2lines.txt"%opt.outputDir,"w")
+fout.write("\\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c}\n")
+cols = "STXS bin"
+count=0
+for NP in NJetParams:
+  count +=1
+  if count < 10:
+    cols += " & {\\tiny{%s}}"%re.sub("_","",NP)
+for NP in NuisanceParams: 
+  count +=1
+  if count < 10:
+    cols += " & {\\tiny{%s}}"%re.sub("_","",NP)
+cols += " & {\\tiny{Total}}"
+fout.write("  %s \\\\ \\hline \n"%cols)
+# Loop over stxs ibins
+for sb in stxs_bins:
+  col = "{\\tiny{%s}}"% FixForLatex(Translate(sb,translateBins))
+  count=0
+  for NP in NJetParams: 
+    count +=1
+    if count < 10:
+      x = 100*extractJetNPfromBin(data,NP,sb)
+      if x == 0: col += " & -"
+      else: col += " & %.1f"%(100*extractJetNPfromBin(data,NP,sb))  
+  for NP in NuisanceParams:
+    count +=1
+    if count < 10:
+      x = 100*extractNPfromBin(data,NuisanceParams,NP,sb)
+      if x == 0: col += " & -"
+      else: col += " & %.1f"%(100*extractNPfromBin(data,NuisanceParams,NP,sb)) 
+  col += " & %.1f"%(100*extractTotalUnc(data,NuisanceParams,NJetParams,sb))
+  fout.write("  %s \\\\ \n"%col)
+fout.write("\\end{tabular}\n")
+
+
+fout.write("\n\n\n\n\n\n")
+
+fout.write("\\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c}\n")
+cols = "STXS bin"
+count=0
+for NP in NJetParams:
+  count +=1
+  if count >= 10:
+    cols += " & {\\tiny{%s}}"%re.sub("_","",NP)
+for NP in NuisanceParams: 
+  count +=1
+  if count >= 10:
+    cols += " & {\\tiny{%s}}"%re.sub("_","",NP)
+cols += " & {\\tiny{Total}}"
+fout.write("  %s \\\\ \\hline \n"%cols)
+# Loop over stxs ibins
+for sb in stxs_bins:
+  col = "{\\tiny{%s}}"% FixForLatex(Translate(sb,translateBins))
+  count=0
+  for NP in NJetParams: 
+    count +=1
+    if count >= 10:
+      x = 100*extractJetNPfromBin(data,NP,sb)
+      if x == 0: col += " & -"
+      else: col += " & %.1f"%(100*extractJetNPfromBin(data,NP,sb))  
+  for NP in NuisanceParams:
+    count +=1
+    if count >= 10:
+      x = 100*extractNPfromBin(data,NuisanceParams,NP,sb)
+      if x == 0: col += " & -"
+      else: col += " & %.1f"%(100*extractNPfromBin(data,NuisanceParams,NP,sb)) 
+  col += " & %.1f"%(100*extractTotalUnc(data,NuisanceParams,NJetParams,sb))
+  fout.write("  %s \\\\ \n"%col)
+fout.write("\\end{tabular}\n")
+
+
+fout.close()
 
