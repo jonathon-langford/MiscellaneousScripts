@@ -203,7 +203,8 @@ fout.close()
 
 
 fout = open("%s/summary_table_2lines.txt"%opt.outputDir,"w")
-fout.write("\\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c}\n")
+#fout.write("\\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c}\n")
+fout.write("\\begin{tabular}{l|c|c|c|c|c|c|c|c|c}\n")
 cols = "STXS bin"
 count=0
 for NP in NJetParams:
@@ -214,7 +215,7 @@ for NP in NuisanceParams:
   count +=1
   if count < 10:
     cols += " & {\\tiny{%s}}"%re.sub("_","",NP)
-cols += " & {\\tiny{Total}}"
+#cols += " & {\\tiny{Total}}"
 fout.write("  %s \\\\ \\hline \n"%cols)
 # Loop over stxs ibins
 for sb in stxs_bins:
@@ -225,14 +226,14 @@ for sb in stxs_bins:
     if count < 10:
       x = 100*extractJetNPfromBin(data,NP,sb)
       if x == 0: col += " & -"
-      else: col += " & %.1f"%(100*extractJetNPfromBin(data,NP,sb))  
+      else: col += " & %.2f"%(100*extractJetNPfromBin(data,NP,sb))  
   for NP in NuisanceParams:
     count +=1
     if count < 10:
       x = 100*extractNPfromBin(data,NuisanceParams,NP,sb)
       if x == 0: col += " & -"
-      else: col += " & %.1f"%(100*extractNPfromBin(data,NuisanceParams,NP,sb)) 
-  col += " & %.1f"%(100*extractTotalUnc(data,NuisanceParams,NJetParams,sb))
+      else: col += " & %.2f"%(100*extractNPfromBin(data,NuisanceParams,NP,sb)) 
+  #col += " & %.2f"%(100*extractTotalUnc(data,NuisanceParams,NJetParams,sb))
   fout.write("  %s \\\\ \n"%col)
 fout.write("\\end{tabular}\n")
 
@@ -261,14 +262,14 @@ for sb in stxs_bins:
     if count >= 10:
       x = 100*extractJetNPfromBin(data,NP,sb)
       if x == 0: col += " & -"
-      else: col += " & %.1f"%(100*extractJetNPfromBin(data,NP,sb))  
+      else: col += " & %.2f"%(100*extractJetNPfromBin(data,NP,sb))  
   for NP in NuisanceParams:
     count +=1
     if count >= 10:
       x = 100*extractNPfromBin(data,NuisanceParams,NP,sb)
       if x == 0: col += " & -"
-      else: col += " & %.1f"%(100*extractNPfromBin(data,NuisanceParams,NP,sb)) 
-  col += " & %.1f"%(100*extractTotalUnc(data,NuisanceParams,NJetParams,sb))
+      else: col += " & %.2f"%(100*extractNPfromBin(data,NuisanceParams,NP,sb)) 
+  col += " & %.2f"%(100*extractTotalUnc(data,NuisanceParams,NJetParams,sb))
   fout.write("  %s \\\\ \n"%col)
 fout.write("\\end{tabular}\n")
 
