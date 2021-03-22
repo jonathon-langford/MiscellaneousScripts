@@ -1,0 +1,278 @@
+---
+comment: ''
+data_license:
+  description: The content can be shared and adapted but you must             give
+    appropriate credit and cannot restrict access to others.
+  name: cc-by-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+---
+additional_resources:
+- description: Image file
+  location: perproc_mu_coloured.png
+- description: Thumbnail image file
+  location: thumb_perproc_mu_coloured.png
+data_file: signal_strengths.yaml
+description: Best-fit values and 68% confidence intervals for the signal strength
+  modifiers. The uncertainty is decomposed ino the theoretical systematic, experimental
+  systematic and statistical components. Additionally, the expected uncertainties
+  derived using an asimov dataset are provided.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from Figure 16
+name: Signal strengths
+---
+additional_resources:
+- description: Image file
+  location: perproc_mu_corr.png
+- description: Thumbnail image file
+  location: thumb_perproc_mu_corr.png
+data_file: correlations:_production_mode_signal_strength.yaml
+description: Observed and expected correlations between the parameters in the production
+  mode signal strength fit.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from additional material
+name: 'Correlations: production mode signal strength'
+---
+additional_resources:
+- description: Image file
+  location: stxs_dist_stage1p2_maximal.png
+- description: Thumbnail image file
+  location: thumb_stxs_dist_stage1p2_maximal.png
+data_file: stxs_stage_1.2_maximal_merging_scheme.yaml
+description: Results of the maximal merging scheme STXS fit. The best fit cross sections
+  are shown together with the respective 68% C.L. intervals. The uncertainty is decomposed
+  into the systematic and statistical components. The expected uncertainties on the
+  fitted parameters are given in brackets. Also listed are the SM predictions for
+  the cross sections and the theoretical uncertainty in those predictions.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from Figure 18 and Table 12
+name: STXS stage 1.2 maximal merging scheme
+---
+additional_resources:
+- description: Image file
+  location: corrMatrix_stage1p2_maximal.png
+- description: Thumbnail image file
+  location: thumb_corrMatrix_stage1p2_maximal.png
+data_file: correlations:_stxs_stage_1.2_maximal_merging_scheme.yaml
+description: Observed and expected correlations between the parameters in the STXS
+  stage 1.2 maximal merging fit.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from Figure 19
+name: 'Correlations: STXS stage 1.2 maximal merging scheme'
+---
+additional_resources:
+- description: Image file
+  location: stxs_dist_stage1p2_minimal.png
+- description: Thumbnail image file
+  location: thumb_stxs_dist_stage1p2_minimal.png
+data_file: stxs_stage_1.2_minimal_merging_scheme.yaml
+description: Results of the minimal merging scheme STXS fit. The best fit cross sections
+  are shown together with the respective 68% C.L. intervals. The uncertainty is decomposed
+  into the systematic and statistical components. The expected uncertainties on the
+  fitted parameters are given in brackets. Also listed are the SM predictions for
+  the cross sections and the theoretical uncertainty in those predictions.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from Figure 20 and Table 13
+name: STXS stage 1.2 minimal merging scheme
+---
+additional_resources:
+- description: Image file
+  location: corrMatrix_stage1p2_minimal.png
+- description: Thumbnail image file
+  location: thumb_corrMatrix_stage1p2_minimal.png
+data_file: correlations:_stxs_stage_1.2_minimal_merging_scheme.yaml
+description: Observed and expected correlations between the parameters in the STXS
+  stage 1.2 minimal merging fit.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from Figure 21
+name: 'Correlations: STXS stage 1.2 minimal merging scheme'
+---
+additional_resources:
+- description: Image file
+  location: scan2D_syst_obs_kappa_g_vs_kappa_gam.png
+- description: Thumbnail image file
+  location: thumb_scan2D_syst_obs_kappa_g_vs_kappa_gam.png
+data_file: kappas_2d:_effective_coupling_modifiers.yaml
+description: Observed likelihood surface.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from Figure 22
+name: 'Kappas 2D: effective coupling modifiers'
+---
+data_file: kappas_2d:_effective_coupling_modifiers_(expected).yaml
+description: Expected likelihood surface.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from additional material
+name: 'Kappas 2D: effective coupling modifiers (expected)'
+---
+additional_resources:
+- description: Image file
+  location: scan2D_syst_obs_kappa_V_vs_kappa_F.png
+- description: Thumbnail image file
+  location: thumb_scan2D_syst_obs_kappa_V_vs_kappa_F.png
+data_file: kappas_2d:_vector_boson_and_fermion.yaml
+description: Observed likelihood surface.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from Figure 22
+name: 'Kappas 2D: vector boson and fermion'
+---
+data_file: kappas_2d:_vector_boson_and_fermion_(expected).yaml
+description: Expected likelihood surface.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from additional material
+name: 'Kappas 2D: vector boson and fermion (expected)'
+---
+additional_resources:
+- description: Image file
+  location: stxs_dist_stage0.png
+- description: Thumbnail image file
+  location: thumb_stxs_dist_stage0.png
+data_file: stxs_stage_0.yaml
+description: Results of the STXS stage 0 fit. The best fit cross sections are shown
+  together with the respective 68% C.L. intervals. The uncertainty is decomposed into
+  the systematic and statistical components. The expected uncertainties on the fitted
+  parameters are given in brackets. Also listed are the SM predictions for the cross
+  sections and the theoretical uncertainty in those predictions.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from additional material
+name: STXS stage 0
+---
+additional_resources:
+- description: Image file
+  location: corrMatrix_stage0.png
+- description: Thumbnail image file
+  location: thumb_corrMatrix_stage0.png
+data_file: correlations:_stxs_stage_0.yaml
+description: Observed and expected correlations between the parameters in the STXS
+  stage 0 fit.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from additional material
+name: 'Correlations: STXS stage 0'
+---
+additional_resources:
+- description: Image file
+  location: scan2D_r_ggH_VBFlike_vs_r_qqH_VBFlike_obs.png
+- description: Thumbnail image file
+  location: thumb_scan2D_r_ggH_VBFlike_vs_r_qqH_VBFlike_obs.png
+data_file: stxs_stage_1.2_maximal_2d:_vbf-like.yaml
+description: Observed likelihood surface.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from additional material
+name: 'STXS stage 1.2 maximal 2D: VBF-like'
+---
+data_file: stxs_stage_1.2_maximal_2d:_vbf-like_(expected).yaml
+description: Expected likelihood surface.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from additional material
+name: 'STXS stage 1.2 maximal 2D: VBF-like (expected)'
+---
+additional_resources:
+- description: Image file
+  location: scan2D_r_tH_vs_r_ttH_obs.png
+- description: Thumbnail image file
+  location: thumb_scan2D_r_tH_vs_r_ttH_obs.png
+data_file: stxs_stage_1.2_maximal_2d:_top-associated.yaml
+description: Observed likelihood surface.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from additional material
+name: 'STXS stage 1.2 maximal 2D: top-associated'
+---
+data_file: stxs_stage_1.2_maximal_2d:_top-associated_(expected).yaml
+description: Expected likelihood surface.
+keywords:
+- name: reactions
+  values:
+  - P P --> H ( --> GAMMA GAMMA ) X
+- name: cmenergies
+  values:
+  - 13000
+location: Results from additional material
+name: 'STXS stage 1.2 maximal 2D: top-associated (expected)'

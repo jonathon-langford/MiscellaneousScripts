@@ -1,0 +1,210 @@
+dependent_variables:
+- header:
+    name: Observed
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -0.111
+        plus: 0.118
+      label: Total
+    - asymerror:
+        minus: -0.063
+        plus: 0.076
+      label: Th. syst
+    - asymerror:
+        minus: -0.031
+        plus: 0.035
+      label: Exp. syst
+    - asymerror:
+        minus: -0.086
+        plus: 0.084
+      label: Stat only
+    value: 1.071
+  - errors:
+    - asymerror:
+        minus: -0.313
+        plus: 0.345
+      label: Total
+    - asymerror:
+        minus: -0.075
+        plus: 0.138
+      label: Th. syst
+    - asymerror:
+        minus: -0.058
+        plus: 0.07
+      label: Exp. syst
+    - asymerror:
+        minus: -0.299
+        plus: 0.308
+      label: Stat only
+    value: 1.044
+  - errors:
+    - asymerror:
+        minus: -0.333
+        plus: 0.361
+      label: Total
+    - asymerror:
+        minus: -0.064
+        plus: 0.074
+      label: Th. syst
+    - asymerror:
+        minus: -0.037
+        plus: 0.051
+      label: Exp. syst
+    - asymerror:
+        minus: -0.324
+        plus: 0.349
+      label: Stat only
+    value: 1.338
+  - errors:
+    - asymerror:
+        minus: -0.28
+        plus: 0.336
+      label: Total
+    - asymerror:
+        minus: -0.105
+        plus: 0.168
+      label: Th. syst
+    - asymerror:
+        minus: -0.053
+        plus: 0.077
+      label: Exp. syst
+    - asymerror:
+        minus: -0.254
+        plus: 0.281
+      label: Stat only
+    value: 1.349
+  - errors:
+    - asymerror:
+        minus: -0.09
+        plus: 0.095
+      label: Total
+    - asymerror:
+        minus: -0.058
+        plus: 0.059
+      label: Th. syst
+    - asymerror:
+        minus: -0.028
+        plus: 0.033
+      label: Exp. syst
+    - asymerror:
+        minus: -0.062
+        plus: 0.066
+      label: Stat only
+    value: 1.121
+- header:
+    name: Expected
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -0.111
+        plus: 0.12
+      label: Total
+    - asymerror:
+        minus: -0.06
+        plus: 0.072
+      label: Th. syst
+    - asymerror:
+        minus: -0.03
+        plus: 0.033
+      label: Exp. syst
+    - asymerror:
+        minus: -0.089
+        plus: 0.091
+      label: Stat only
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.292
+        plus: 0.333
+      label: Total
+    - asymerror:
+        minus: -0.129
+        plus: 0.193
+      label: Th. syst
+    - asymerror:
+        minus: -0.053
+        plus: 0.062
+      label: Exp. syst
+    - asymerror:
+        minus: -0.257
+        plus: 0.264
+      label: Stat only
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.321
+        plus: 0.369
+      label: Total
+    - asymerror:
+        minus: -0.049
+        plus: 0.074
+      label: Th. syst
+    - asymerror:
+        minus: -0.026
+        plus: 0.039
+      label: Exp. syst
+    - asymerror:
+        minus: -0.316
+        plus: 0.36
+      label: Stat only
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.258
+        plus: 0.315
+      label: Total
+    - asymerror:
+        minus: -0.062
+        plus: 0.133
+      label: Th. syst
+    - asymerror:
+        minus: -0.039
+        plus: 0.057
+      label: Exp. syst
+    - asymerror:
+        minus: -0.247
+        plus: 0.28
+      label: Stat only
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.088
+        plus: 0.095
+      label: Total
+    - asymerror:
+        minus: -0.051
+        plus: 0.06
+      label: Th. syst
+    - asymerror:
+        minus: -0.028
+        plus: 0.031
+      label: Exp. syst
+    - asymerror:
+        minus: -0.065
+        plus: 0.067
+      label: Stat only
+    value: 1.0
+independent_variables:
+- header:
+    name: Parameter
+  values:
+  - value: $\mu_{ggH}$
+  - value: $\mu_{VBF}$
+  - value: $\mu_{VH}$
+  - value: $\mu_{top}$
+  - value: $\mu$ (inclusive)

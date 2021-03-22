@@ -1,0 +1,446 @@
+dependent_variables:
+- header:
+    name: SM predicted cross section times branching ratio
+    units: fb
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -6.805
+        plus: 6.8
+      label: Theory
+    value: 102.02
+  - errors:
+    - asymerror:
+        minus: -0.614
+        plus: 0.598
+      label: Theory
+    value: 4.545
+  - errors:
+    - asymerror:
+        minus: -0.027
+        plus: 0.027
+      label: Theory
+    value: 0.883
+  - errors:
+    - asymerror:
+        minus: -0.021
+        plus: 0.025
+      label: Theory
+    value: 0.539
+  - errors:
+    - asymerror:
+        minus: -0.114
+        plus: 0.081
+      label: Theory
+    value: 1.132
+  - errors:
+    - asymerror:
+        minus: -0.027
+        plus: 0.014
+      label: Theory
+    value: 0.204
+- header:
+    name: Observed cross section times branching ratio
+    units: fb
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -9.172
+        plus: 9.412
+      label: Total
+    - asymerror:
+        minus: -8.756
+        plus: 8.593
+      label: Stat only
+    - asymerror:
+        minus: -2.73
+        plus: 3.842
+      label: Syst
+    value: 109.65
+  - errors:
+    - asymerror:
+        minus: -1.137
+        plus: 1.213
+      label: Total
+    - asymerror:
+        minus: -1.03
+        plus: 1.173
+      label: Stat only
+    - asymerror:
+        minus: -0.482
+        plus: 0.311
+      label: Syst
+    value: 3.671
+  - errors:
+    - asymerror:
+        minus: -0.434
+        plus: 0.486
+      label: Total
+    - asymerror:
+        minus: -0.432
+        plus: 0.481
+      label: Stat only
+    - asymerror:
+        minus: -0.041
+        plus: 0.07
+      label: Syst
+    value: 1.188
+  - errors:
+    - asymerror:
+        minus: -0.357
+        plus: 0.411
+      label: Total
+    - asymerror:
+        minus: -0.35
+        plus: 0.404
+      label: Stat only
+    - asymerror:
+        minus: -0.071
+        plus: 0.071
+      label: Syst
+    value: 0.712
+  - errors:
+    - asymerror:
+        minus: -0.389
+        plus: 0.422
+      label: Total
+    - asymerror:
+        minus: -0.382
+        plus: 0.417
+      label: Stat only
+    - asymerror:
+        minus: -0.076
+        plus: 0.061
+      label: Syst
+    value: 1.143
+  - errors:
+    - asymerror:
+        minus: -0.681
+        plus: 0.741
+      label: Total
+    - asymerror:
+        minus: -0.671
+        plus: 0.726
+      label: Stat only
+    - asymerror:
+        minus: -0.117
+        plus: 0.149
+      label: Syst
+    value: 1.25
+- header:
+    name: Observed ratio to SM
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -0.09
+        plus: 0.092
+      label: Total
+    - asymerror:
+        minus: -0.086
+        plus: 0.084
+      label: Stat only
+    - asymerror:
+        minus: -0.027
+        plus: 0.038
+      label: Syst
+    value: 1.075
+  - errors:
+    - asymerror:
+        minus: -0.25
+        plus: 0.267
+      label: Total
+    - asymerror:
+        minus: -0.227
+        plus: 0.258
+      label: Stat only
+    - asymerror:
+        minus: -0.106
+        plus: 0.068
+      label: Syst
+    value: 0.808
+  - errors:
+    - asymerror:
+        minus: -0.491
+        plus: 0.55
+      label: Total
+    - asymerror:
+        minus: -0.489
+        plus: 0.544
+      label: Stat only
+    - asymerror:
+        minus: -0.047
+        plus: 0.079
+      label: Syst
+    value: 1.346
+  - errors:
+    - asymerror:
+        minus: -0.662
+        plus: 0.762
+      label: Total
+    - asymerror:
+        minus: -0.649
+        plus: 0.75
+      label: Stat only
+    - asymerror:
+        minus: -0.132
+        plus: 0.132
+      label: Syst
+    value: 1.32
+  - errors:
+    - asymerror:
+        minus: -0.344
+        plus: 0.373
+      label: Total
+    - asymerror:
+        minus: -0.338
+        plus: 0.369
+      label: Stat only
+    - asymerror:
+        minus: -0.067
+        plus: 0.054
+      label: Syst
+    value: 1.01
+  - errors:
+    - asymerror:
+        minus: -3.339
+        plus: 3.634
+      label: Total
+    - asymerror:
+        minus: -3.289
+        plus: 3.56
+      label: Stat only
+    - asymerror:
+        minus: -0.575
+        plus: 0.729
+      label: Syst
+    value: 6.128
+- header:
+    name: Expected cross section times branching ratio
+    units: fb
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -9.721
+        plus: 10.024
+      label: Total
+    - asymerror:
+        minus: -9.2
+        plus: 9.341
+      label: Stat only
+    - asymerror:
+        minus: -3.139
+        plus: 3.638
+      label: Syst
+    value: 102.02
+  - errors:
+    - asymerror:
+        minus: -1.193
+        plus: 1.222
+      label: Total
+    - asymerror:
+        minus: -1.124
+        plus: 1.145
+      label: Stat only
+    - asymerror:
+        minus: -0.399
+        plus: 0.429
+      label: Syst
+    value: 4.545
+  - errors:
+    - asymerror:
+        minus: -0.419
+        plus: 0.506
+      label: Total
+    - asymerror:
+        minus: -0.417
+        plus: 0.501
+      label: Stat only
+    - asymerror:
+        minus: -0.037
+        plus: 0.075
+      label: Syst
+    value: 0.883
+  - errors:
+    - asymerror:
+        minus: -0.35
+        plus: 0.418
+      label: Total
+    - asymerror:
+        minus: -0.349
+        plus: 0.414
+      label: Stat only
+    - asymerror:
+        minus: -0.023
+        plus: 0.056
+      label: Syst
+    value: 0.539
+  - errors:
+    - asymerror:
+        minus: -0.394
+        plus: 0.421
+      label: Total
+    - asymerror:
+        minus: -0.392
+        plus: 0.411
+      label: Stat only
+    - asymerror:
+        minus: -0.042
+        plus: 0.091
+      label: Syst
+    value: 1.132
+  - errors:
+    - asymerror:
+        minus: -0.204
+        plus: 0.711
+      label: Total
+    - asymerror:
+        minus: -0.204
+        plus: 0.706
+      label: Stat only
+    - asymerror:
+        minus: -0.086
+        plus: 0.086
+      label: Syst
+    value: 0.204
+- header:
+    name: Expected ratio to SM
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -0.095
+        plus: 0.098
+      label: Total
+    - asymerror:
+        minus: -0.09
+        plus: 0.092
+      label: Stat only
+    - asymerror:
+        minus: -0.031
+        plus: 0.036
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.262
+        plus: 0.269
+      label: Total
+    - asymerror:
+        minus: -0.247
+        plus: 0.252
+      label: Stat only
+    - asymerror:
+        minus: -0.088
+        plus: 0.094
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.474
+        plus: 0.573
+      label: Total
+    - asymerror:
+        minus: -0.473
+        plus: 0.567
+      label: Stat only
+    - asymerror:
+        minus: -0.042
+        plus: 0.085
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.648
+        plus: 0.775
+      label: Total
+    - asymerror:
+        minus: -0.647
+        plus: 0.768
+      label: Stat only
+    - asymerror:
+        minus: -0.042
+        plus: 0.104
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.348
+        plus: 0.372
+      label: Total
+    - asymerror:
+        minus: -0.346
+        plus: 0.363
+      label: Stat only
+    - asymerror:
+        minus: -0.037
+        plus: 0.081
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -1.0
+        plus: 3.486
+      label: Total
+    - asymerror:
+        minus: -1.0
+        plus: 3.461
+      label: Stat only
+    - asymerror:
+        minus: -0.422
+        plus: 0.422
+      label: Syst
+    value: 1.0
+independent_variables:
+- header:
+    name: STXS region
+  values:
+  - value: ggH
+  - value: qqH
+  - value: WH lep
+  - value: ZH lep
+  - value: ttH
+  - value: tH

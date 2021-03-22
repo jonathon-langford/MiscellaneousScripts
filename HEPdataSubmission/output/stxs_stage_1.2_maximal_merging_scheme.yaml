@@ -1,0 +1,1139 @@
+dependent_variables:
+- header:
+    name: SM predicted cross section times branching ratio
+    units: fb
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -4.178
+        plus: 4.135
+      label: Theory
+    value: 15.211
+  - errors:
+    - asymerror:
+        minus: -4.614
+        plus: 4.841
+      label: Theory
+    value: 44.251
+  - errors:
+    - asymerror:
+        minus: -2.271
+        plus: 2.252
+      label: Theory
+    value: 16.202
+  - errors:
+    - asymerror:
+        minus: -1.552
+        plus: 1.56
+      label: Theory
+    value: 11.229
+  - errors:
+    - asymerror:
+        minus: -0.358
+        plus: 0.358
+      label: Theory
+    value: 2.003
+  - errors:
+    - asymerror:
+        minus: -0.678
+        plus: 0.678
+      label: Theory
+    value: 2.819
+  - errors:
+    - asymerror:
+        minus: -1.074
+        plus: 1.075
+      label: Theory
+    value: 4.535
+  - errors:
+    - asymerror:
+        minus: -0.498
+        plus: 0.486
+      label: Theory
+    value: 2.119
+  - errors:
+    - asymerror:
+        minus: -0.516
+        plus: 0.517
+      label: Theory
+    value: 2.217
+  - errors:
+    - asymerror:
+        minus: -0.354
+        plus: 0.362
+      label: Theory
+    value: 1.429
+  - errors:
+    - asymerror:
+        minus: -0.592
+        plus: 0.592
+      label: Theory
+    value: 2.957
+  - errors:
+    - asymerror:
+        minus: -0.043
+        plus: 0.048
+      label: Theory
+    value: 1.22
+  - errors:
+    - asymerror:
+        minus: -0.024
+        plus: 0.029
+      label: Theory
+    value: 0.369
+  - errors:
+    - asymerror:
+        minus: -0.027
+        plus: 0.027
+      label: Theory
+    value: 0.883
+  - errors:
+    - asymerror:
+        minus: -0.021
+        plus: 0.025
+      label: Theory
+    value: 0.539
+  - errors:
+    - asymerror:
+        minus: -0.114
+        plus: 0.081
+      label: Theory
+    value: 1.132
+  - errors:
+    - asymerror:
+        minus: -0.027
+        plus: 0.014
+      label: Theory
+    value: 0.204
+- header:
+    name: Observed cross section times branching ratio
+    units: fb
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -3.993
+        plus: 3.923
+      label: Total
+    - asymerror:
+        minus: -3.985
+        plus: 3.899
+      label: Stat only
+    - asymerror:
+        minus: -0.255
+        plus: 0.436
+      label: Syst
+    value: 9.409
+  - errors:
+    - asymerror:
+        minus: -7.17
+        plus: 8.097
+      label: Total
+    - asymerror:
+        minus: -6.908
+        plus: 7.701
+      label: Stat only
+    - asymerror:
+        minus: -1.921
+        plus: 2.502
+      label: Syst
+    value: 58.498
+  - errors:
+    - asymerror:
+        minus: -5.488
+        plus: 5.578
+      label: Total
+    - asymerror:
+        minus: -5.452
+        plus: 5.52
+      label: Stat only
+    - asymerror:
+        minus: -0.63
+        plus: 0.802
+      label: Syst
+    value: 13.387
+  - errors:
+    - asymerror:
+        minus: -2.965
+        plus: 2.914
+      label: Total
+    - asymerror:
+        minus: -2.922
+        plus: 2.828
+      label: Stat only
+    - asymerror:
+        minus: -0.499
+        plus: 0.703
+      label: Syst
+    value: 13.658
+  - errors:
+    - asymerror:
+        minus: -0.874
+        plus: 0.903
+      label: Total
+    - asymerror:
+        minus: -0.867
+        plus: 0.896
+      label: Stat only
+    - asymerror:
+        minus: -0.109
+        plus: 0.109
+      label: Syst
+    value: 2.562
+  - errors:
+    - asymerror:
+        minus: -3.545
+        plus: 3.648
+      label: Total
+    - asymerror:
+        minus: -3.532
+        plus: 3.624
+      label: Stat only
+    - asymerror:
+        minus: -0.31
+        plus: 0.41
+      label: Syst
+    value: 3.622
+  - errors:
+    - asymerror:
+        minus: -0.078
+        plus: 2.772
+      label: Total
+    - asymerror:
+        minus: -0.078
+        plus: 2.758
+      label: Stat only
+    - asymerror:
+        minus: -0.078
+        plus: 0.281
+      label: Syst
+    value: 0.078
+  - errors:
+    - asymerror:
+        minus: -0.817
+        plus: 0.921
+      label: Total
+    - asymerror:
+        minus: -0.817
+        plus: 0.883
+      label: Stat only
+    - asymerror:
+        minus: -0.259
+        plus: 0.259
+      label: Syst
+    value: 0.817
+  - errors:
+    - asymerror:
+        minus: -2.594
+        plus: 2.446
+      label: Total
+    - asymerror:
+        minus: -2.549
+        plus: 2.265
+      label: Stat only
+    - asymerror:
+        minus: -0.48
+        plus: 0.924
+      label: Syst
+    value: 5.856
+  - errors:
+    - asymerror:
+        minus: -0.474
+        plus: 0.496
+      label: Total
+    - asymerror:
+        minus: -0.464
+        plus: 0.493
+      label: Stat only
+    - asymerror:
+        minus: -0.094
+        plus: 0.052
+      label: Syst
+    value: 1.344
+  - errors:
+    - asymerror:
+        minus: -0.489
+        plus: 1.444
+      label: Total
+    - asymerror:
+        minus: -0.489
+        plus: 1.404
+      label: Stat only
+    - asymerror:
+        minus: -0.336
+        plus: 0.336
+      label: Syst
+    value: 0.489
+  - errors:
+    - asymerror:
+        minus: -1.236
+        plus: 1.201
+      label: Total
+    - asymerror:
+        minus: -1.208
+        plus: 1.194
+      label: Stat only
+    - asymerror:
+        minus: -0.258
+        plus: 0.128
+      label: Syst
+    value: 1.569
+  - errors:
+    - asymerror:
+        minus: -0.219
+        plus: 0.241
+      label: Total
+    - asymerror:
+        minus: -0.218
+        plus: 0.24
+      label: Stat only
+    - asymerror:
+        minus: -0.012
+        plus: 0.031
+      label: Syst
+    value: 0.523
+  - errors:
+    - asymerror:
+        minus: -0.435
+        plus: 0.486
+      label: Total
+    - asymerror:
+        minus: -0.433
+        plus: 0.482
+      label: Stat only
+    - asymerror:
+        minus: -0.038
+        plus: 0.066
+      label: Syst
+    value: 1.189
+  - errors:
+    - asymerror:
+        minus: -0.353
+        plus: 0.41
+      label: Total
+    - asymerror:
+        minus: -0.351
+        plus: 0.403
+      label: Stat only
+    - asymerror:
+        minus: -0.029
+        plus: 0.074
+      label: Syst
+    value: 0.712
+  - errors:
+    - asymerror:
+        minus: -0.391
+        plus: 0.422
+      label: Total
+    - asymerror:
+        minus: -0.384
+        plus: 0.416
+      label: Stat only
+    - asymerror:
+        minus: -0.072
+        plus: 0.07
+      label: Syst
+    value: 1.133
+  - errors:
+    - asymerror:
+        minus: -0.688
+        plus: 0.76
+      label: Total
+    - asymerror:
+        minus: -0.675
+        plus: 0.753
+      label: Stat only
+    - asymerror:
+        minus: -0.13
+        plus: 0.103
+      label: Syst
+    value: 1.273
+- header:
+    name: Observed ratio to SM
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -0.263
+        plus: 0.258
+      label: Total
+    - asymerror:
+        minus: -0.262
+        plus: 0.256
+      label: Stat only
+    - asymerror:
+        minus: -0.017
+        plus: 0.029
+      label: Syst
+    value: 0.619
+  - errors:
+    - asymerror:
+        minus: -0.162
+        plus: 0.183
+      label: Total
+    - asymerror:
+        minus: -0.156
+        plus: 0.174
+      label: Stat only
+    - asymerror:
+        minus: -0.043
+        plus: 0.057
+      label: Syst
+    value: 1.322
+  - errors:
+    - asymerror:
+        minus: -0.339
+        plus: 0.344
+      label: Total
+    - asymerror:
+        minus: -0.337
+        plus: 0.341
+      label: Stat only
+    - asymerror:
+        minus: -0.039
+        plus: 0.049
+      label: Syst
+    value: 0.826
+  - errors:
+    - asymerror:
+        minus: -0.264
+        plus: 0.26
+      label: Total
+    - asymerror:
+        minus: -0.26
+        plus: 0.252
+      label: Stat only
+    - asymerror:
+        minus: -0.044
+        plus: 0.063
+      label: Syst
+    value: 1.216
+  - errors:
+    - asymerror:
+        minus: -0.436
+        plus: 0.451
+      label: Total
+    - asymerror:
+        minus: -0.433
+        plus: 0.448
+      label: Stat only
+    - asymerror:
+        minus: -0.054
+        plus: 0.054
+      label: Syst
+    value: 1.279
+  - errors:
+    - asymerror:
+        minus: -1.258
+        plus: 1.294
+      label: Total
+    - asymerror:
+        minus: -1.253
+        plus: 1.286
+      label: Stat only
+    - asymerror:
+        minus: -0.11
+        plus: 0.145
+      label: Syst
+    value: 1.285
+  - errors:
+    - asymerror:
+        minus: -0.017
+        plus: 0.611
+      label: Total
+    - asymerror:
+        minus: -0.017
+        plus: 0.608
+      label: Stat only
+    - asymerror:
+        minus: -0.017
+        plus: 0.062
+      label: Syst
+    value: 0.017
+  - errors:
+    - asymerror:
+        minus: -0.386
+        plus: 0.434
+      label: Total
+    - asymerror:
+        minus: -0.386
+        plus: 0.417
+      label: Stat only
+    - asymerror:
+        minus: -0.122
+        plus: 0.122
+      label: Syst
+    value: 0.386
+  - errors:
+    - asymerror:
+        minus: -1.17
+        plus: 1.103
+      label: Total
+    - asymerror:
+        minus: -1.15
+        plus: 1.022
+      label: Stat only
+    - asymerror:
+        minus: -0.217
+        plus: 0.417
+      label: Syst
+    value: 2.641
+  - errors:
+    - asymerror:
+        minus: -0.331
+        plus: 0.347
+      label: Total
+    - asymerror:
+        minus: -0.325
+        plus: 0.345
+      label: Stat only
+    - asymerror:
+        minus: -0.066
+        plus: 0.036
+      label: Syst
+    value: 0.941
+  - errors:
+    - asymerror:
+        minus: -0.165
+        plus: 0.488
+      label: Total
+    - asymerror:
+        minus: -0.165
+        plus: 0.475
+      label: Stat only
+    - asymerror:
+        minus: -0.114
+        plus: 0.114
+      label: Syst
+    value: 0.165
+  - errors:
+    - asymerror:
+        minus: -1.013
+        plus: 0.985
+      label: Total
+    - asymerror:
+        minus: -0.991
+        plus: 0.979
+      label: Stat only
+    - asymerror:
+        minus: -0.212
+        plus: 0.105
+      label: Syst
+    value: 1.287
+  - errors:
+    - asymerror:
+        minus: -0.592
+        plus: 0.655
+      label: Total
+    - asymerror:
+        minus: -0.592
+        plus: 0.649
+      label: Stat only
+    - asymerror:
+        minus: -0.033
+        plus: 0.083
+      label: Syst
+    value: 1.419
+  - errors:
+    - asymerror:
+        minus: -0.493
+        plus: 0.551
+      label: Total
+    - asymerror:
+        minus: -0.491
+        plus: 0.546
+      label: Stat only
+    - asymerror:
+        minus: -0.044
+        plus: 0.074
+      label: Syst
+    value: 1.346
+  - errors:
+    - asymerror:
+        minus: -0.654
+        plus: 0.76
+      label: Total
+    - asymerror:
+        minus: -0.652
+        plus: 0.748
+      label: Stat only
+    - asymerror:
+        minus: -0.055
+        plus: 0.137
+      label: Syst
+    value: 1.321
+  - errors:
+    - asymerror:
+        minus: -0.346
+        plus: 0.373
+      label: Total
+    - asymerror:
+        minus: -0.34
+        plus: 0.367
+      label: Stat only
+    - asymerror:
+        minus: -0.063
+        plus: 0.062
+      label: Syst
+    value: 1.001
+  - errors:
+    - asymerror:
+        minus: -3.369
+        plus: 3.723
+      label: Total
+    - asymerror:
+        minus: -3.308
+        plus: 3.688
+      label: Stat only
+    - asymerror:
+        minus: -0.639
+        plus: 0.506
+      label: Syst
+    value: 6.24
+- header:
+    name: Expected cross section times branching ratio
+    units: fb
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -4.064
+        plus: 4.196
+      label: Total
+    - asymerror:
+        minus: -4.051
+        plus: 4.165
+      label: Stat only
+    - asymerror:
+        minus: -0.327
+        plus: 0.51
+      label: Syst
+    value: 15.211
+  - errors:
+    - asymerror:
+        minus: -7.766
+        plus: 7.871
+      label: Total
+    - asymerror:
+        minus: -7.634
+        plus: 7.666
+      label: Stat only
+    - asymerror:
+        minus: -1.422
+        plus: 1.784
+      label: Syst
+    value: 44.251
+  - errors:
+    - asymerror:
+        minus: -5.586
+        plus: 5.667
+      label: Total
+    - asymerror:
+        minus: -5.565
+        plus: 5.615
+      label: Stat only
+    - asymerror:
+        minus: -0.481
+        plus: 0.766
+      label: Syst
+    value: 16.202
+  - errors:
+    - asymerror:
+        minus: -3.387
+        plus: 3.148
+      label: Total
+    - asymerror:
+        minus: -3.357
+        plus: 3.092
+      label: Stat only
+    - asymerror:
+        minus: -0.455
+        plus: 0.593
+      label: Syst
+    value: 11.229
+  - errors:
+    - asymerror:
+        minus: -0.918
+        plus: 0.911
+      label: Total
+    - asymerror:
+        minus: -0.897
+        plus: 0.9
+      label: Stat only
+    - asymerror:
+        minus: -0.194
+        plus: 0.147
+      label: Syst
+    value: 2.003
+  - errors:
+    - asymerror:
+        minus: -2.819
+        plus: 3.731
+      label: Total
+    - asymerror:
+        minus: -2.819
+        plus: 3.691
+      label: Stat only
+    - asymerror:
+        minus: -0.547
+        plus: 0.547
+      label: Syst
+    value: 2.819
+  - errors:
+    - asymerror:
+        minus: -2.82
+        plus: 2.865
+      label: Total
+    - asymerror:
+        minus: -2.817
+        plus: 2.84
+      label: Stat only
+    - asymerror:
+        minus: -0.14
+        plus: 0.38
+      label: Syst
+    value: 4.535
+  - errors:
+    - asymerror:
+        minus: -1.1
+        plus: 1.151
+      label: Total
+    - asymerror:
+        minus: -1.09
+        plus: 1.11
+      label: Stat only
+    - asymerror:
+        minus: -0.144
+        plus: 0.305
+      label: Syst
+    value: 2.119
+  - errors:
+    - asymerror:
+        minus: -2.217
+        plus: 2.902
+      label: Total
+    - asymerror:
+        minus: -2.217
+        plus: 2.814
+      label: Stat only
+    - asymerror:
+        minus: -0.711
+        plus: 0.711
+      label: Syst
+    value: 2.217
+  - errors:
+    - asymerror:
+        minus: -0.494
+        plus: 0.586
+      label: Total
+    - asymerror:
+        minus: -0.492
+        plus: 0.579
+      label: Stat only
+    - asymerror:
+        minus: -0.049
+        plus: 0.091
+      label: Syst
+    value: 1.429
+  - errors:
+    - asymerror:
+        minus: -1.531
+        plus: 1.492
+      label: Total
+    - asymerror:
+        minus: -1.469
+        plus: 1.471
+      label: Stat only
+    - asymerror:
+        minus: -0.43
+        plus: 0.25
+      label: Syst
+    value: 2.957
+  - errors:
+    - asymerror:
+        minus: -1.227
+        plus: 1.149
+      label: Total
+    - asymerror:
+        minus: -1.226
+        plus: 1.147
+      label: Stat only
+    - asymerror:
+        minus: -0.041
+        plus: 0.075
+      label: Syst
+    value: 1.22
+  - errors:
+    - asymerror:
+        minus: -0.228
+        plus: 0.255
+      label: Total
+    - asymerror:
+        minus: -0.228
+        plus: 0.254
+      label: Stat only
+    - asymerror:
+        minus: -0.009
+        plus: 0.026
+      label: Syst
+    value: 0.369
+  - errors:
+    - asymerror:
+        minus: -0.417
+        plus: 0.505
+      label: Total
+    - asymerror:
+        minus: -0.414
+        plus: 0.503
+      label: Stat only
+    - asymerror:
+        minus: -0.052
+        plus: 0.052
+      label: Syst
+    value: 0.883
+  - errors:
+    - asymerror:
+        minus: -0.351
+        plus: 0.418
+      label: Total
+    - asymerror:
+        minus: -0.35
+        plus: 0.413
+      label: Stat only
+    - asymerror:
+        minus: -0.026
+        plus: 0.062
+      label: Syst
+    value: 0.539
+  - errors:
+    - asymerror:
+        minus: -0.405
+        plus: 0.418
+      label: Total
+    - asymerror:
+        minus: -0.403
+        plus: 0.408
+      label: Stat only
+    - asymerror:
+        minus: -0.045
+        plus: 0.09
+      label: Syst
+    value: 1.132
+  - errors:
+    - asymerror:
+        minus: -0.204
+        plus: 0.762
+      label: Total
+    - asymerror:
+        minus: -0.204
+        plus: 0.757
+      label: Stat only
+    - asymerror:
+        minus: -0.085
+        plus: 0.085
+      label: Syst
+    value: 0.204
+- header:
+    name: Expected ratio to SM
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - errors:
+    - asymerror:
+        minus: -0.267
+        plus: 0.276
+      label: Total
+    - asymerror:
+        minus: -0.266
+        plus: 0.274
+      label: Stat only
+    - asymerror:
+        minus: -0.022
+        plus: 0.034
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.175
+        plus: 0.178
+      label: Total
+    - asymerror:
+        minus: -0.173
+        plus: 0.173
+      label: Stat only
+    - asymerror:
+        minus: -0.032
+        plus: 0.04
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.345
+        plus: 0.35
+      label: Total
+    - asymerror:
+        minus: -0.343
+        plus: 0.347
+      label: Stat only
+    - asymerror:
+        minus: -0.03
+        plus: 0.047
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.302
+        plus: 0.28
+      label: Total
+    - asymerror:
+        minus: -0.299
+        plus: 0.275
+      label: Stat only
+    - asymerror:
+        minus: -0.04
+        plus: 0.053
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.458
+        plus: 0.455
+      label: Total
+    - asymerror:
+        minus: -0.448
+        plus: 0.449
+      label: Stat only
+    - asymerror:
+        minus: -0.097
+        plus: 0.073
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -1.0
+        plus: 1.324
+      label: Total
+    - asymerror:
+        minus: -1.0
+        plus: 1.309
+      label: Stat only
+    - asymerror:
+        minus: -0.194
+        plus: 0.194
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.622
+        plus: 0.632
+      label: Total
+    - asymerror:
+        minus: -0.621
+        plus: 0.626
+      label: Stat only
+    - asymerror:
+        minus: -0.031
+        plus: 0.084
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.519
+        plus: 0.543
+      label: Total
+    - asymerror:
+        minus: -0.514
+        plus: 0.524
+      label: Stat only
+    - asymerror:
+        minus: -0.068
+        plus: 0.144
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -1.0
+        plus: 1.309
+      label: Total
+    - asymerror:
+        minus: -1.0
+        plus: 1.269
+      label: Stat only
+    - asymerror:
+        minus: -0.321
+        plus: 0.321
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.346
+        plus: 0.41
+      label: Total
+    - asymerror:
+        minus: -0.344
+        plus: 0.405
+      label: Stat only
+    - asymerror:
+        minus: -0.034
+        plus: 0.064
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.518
+        plus: 0.505
+      label: Total
+    - asymerror:
+        minus: -0.497
+        plus: 0.497
+      label: Stat only
+    - asymerror:
+        minus: -0.145
+        plus: 0.085
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -1.006
+        plus: 0.942
+      label: Total
+    - asymerror:
+        minus: -1.005
+        plus: 0.94
+      label: Stat only
+    - asymerror:
+        minus: -0.034
+        plus: 0.061
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.619
+        plus: 0.692
+      label: Total
+    - asymerror:
+        minus: -0.619
+        plus: 0.688
+      label: Stat only
+    - asymerror:
+        minus: -0.025
+        plus: 0.07
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.473
+        plus: 0.572
+      label: Total
+    - asymerror:
+        minus: -0.469
+        plus: 0.569
+      label: Stat only
+    - asymerror:
+        minus: -0.059
+        plus: 0.059
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.65
+        plus: 0.775
+      label: Total
+    - asymerror:
+        minus: -0.649
+        plus: 0.767
+      label: Stat only
+    - asymerror:
+        minus: -0.048
+        plus: 0.116
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -0.358
+        plus: 0.37
+      label: Total
+    - asymerror:
+        minus: -0.356
+        plus: 0.361
+      label: Stat only
+    - asymerror:
+        minus: -0.04
+        plus: 0.08
+      label: Syst
+    value: 1.0
+  - errors:
+    - asymerror:
+        minus: -1.0
+        plus: 3.735
+      label: Total
+    - asymerror:
+        minus: -1.0
+        plus: 3.712
+      label: Stat only
+    - asymerror:
+        minus: -0.414
+        plus: 0.414
+      label: Syst
+    value: 1.0
+independent_variables:
+- header:
+    name: STXS region
+  values:
+  - value: ggH 0J low $p_{T}^{H}$
+  - value: ggH 0J high $p_{T}^{H}$
+  - value: ggH 1J low $p_{T}^{H}$
+  - value: ggH 1J med $p_{T}^{H}$
+  - value: ggH 1J high $p_{T}^{H}$
+  - value: ggH $\geq$2J low $p_{T}^{H}$
+  - value: ggH $\geq$2J med $p_{T}^{H}$
+  - value: ggH $\geq2$J high $p_{T}^{H}$
+  - value: ggH VBF-like
+  - value: ggH BSM
+  - value: qqH VBF-like
+  - value: qqH VH-like
+  - value: qqH BSM
+  - value: WH lep
+  - value: ZH lep
+  - value: ttH
+  - value: tH

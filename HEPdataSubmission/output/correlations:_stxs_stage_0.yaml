@@ -1,0 +1,176 @@
+dependent_variables:
+- header:
+    name: Observed correlation
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - value: 1.0
+  - value: -0.315
+  - value: 0.009
+  - value: 0.012
+  - value: 0.026
+  - value: -0.021
+  - value: -0.315
+  - value: 1.0
+  - value: 0.005
+  - value: -0.003
+  - value: 0.041
+  - value: -0.047
+  - value: 0.009
+  - value: 0.005
+  - value: 1.0
+  - value: -0.164
+  - value: 0.085
+  - value: -0.177
+  - value: 0.012
+  - value: -0.003
+  - value: -0.164
+  - value: 1.0
+  - value: 0.011
+  - value: -0.028
+  - value: 0.026
+  - value: 0.041
+  - value: 0.085
+  - value: 0.011
+  - value: 1.0
+  - value: -0.591
+  - value: -0.021
+  - value: -0.047
+  - value: -0.177
+  - value: -0.028
+  - value: -0.591
+  - value: 1.0
+- header:
+    name: Expected correlation
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: ABS(YRAP(HIGGS))
+    value: <2.5
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - value: 1.0
+  - value: -0.355
+  - value: 0.003
+  - value: 0.008
+  - value: 0.026
+  - value: -0.031
+  - value: -0.355
+  - value: 1.0
+  - value: 0.01
+  - value: -0.001
+  - value: 0.04
+  - value: -0.048
+  - value: 0.003
+  - value: 0.01
+  - value: 1.0
+  - value: -0.188
+  - value: 0.092
+  - value: -0.184
+  - value: 0.008
+  - value: -0.001
+  - value: -0.188
+  - value: 1.0
+  - value: 0.013
+  - value: -0.029
+  - value: 0.026
+  - value: 0.04
+  - value: 0.092
+  - value: 0.013
+  - value: 1.0
+  - value: -0.63
+  - value: -0.031
+  - value: -0.048
+  - value: -0.184
+  - value: -0.029
+  - value: -0.63
+  - value: 1.0
+independent_variables:
+- header:
+    name: STXS region (x)
+  values:
+  - value: ggH
+  - value: ggH
+  - value: ggH
+  - value: ggH
+  - value: ggH
+  - value: ggH
+  - value: qqH
+  - value: qqH
+  - value: qqH
+  - value: qqH
+  - value: qqH
+  - value: qqH
+  - value: WH lep
+  - value: WH lep
+  - value: WH lep
+  - value: WH lep
+  - value: WH lep
+  - value: WH lep
+  - value: ZH lep
+  - value: ZH lep
+  - value: ZH lep
+  - value: ZH lep
+  - value: ZH lep
+  - value: ZH lep
+  - value: ttH
+  - value: ttH
+  - value: ttH
+  - value: ttH
+  - value: ttH
+  - value: ttH
+  - value: tH
+  - value: tH
+  - value: tH
+  - value: tH
+  - value: tH
+  - value: tH
+- header:
+    name: STXS region (y)
+  values:
+  - value: ggH
+  - value: qqH
+  - value: WH lep
+  - value: ZH lep
+  - value: ttH
+  - value: tH
+  - value: ggH
+  - value: qqH
+  - value: WH lep
+  - value: ZH lep
+  - value: ttH
+  - value: tH
+  - value: ggH
+  - value: qqH
+  - value: WH lep
+  - value: ZH lep
+  - value: ttH
+  - value: tH
+  - value: ggH
+  - value: qqH
+  - value: WH lep
+  - value: ZH lep
+  - value: ttH
+  - value: tH
+  - value: ggH
+  - value: qqH
+  - value: WH lep
+  - value: ZH lep
+  - value: ttH
+  - value: tH
+  - value: ggH
+  - value: qqH
+  - value: WH lep
+  - value: ZH lep
+  - value: ttH
+  - value: tH

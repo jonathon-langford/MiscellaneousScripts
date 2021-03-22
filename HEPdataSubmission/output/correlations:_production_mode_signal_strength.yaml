@@ -1,0 +1,92 @@
+dependent_variables:
+- header:
+    name: Observed correlation
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - value: 1.0
+  - value: -0.204
+  - value: -0.036
+  - value: 0.037
+  - value: -0.204
+  - value: 1.0
+  - value: 0.018
+  - value: 0.015
+  - value: -0.036
+  - value: 0.018
+  - value: 1.0
+  - value: -0.065
+  - value: 0.037
+  - value: 0.015
+  - value: -0.065
+  - value: 1.0
+- header:
+    name: Expected correlation
+  qualifiers:
+  - name: SQRT(S)
+    units: TeV
+    value: 13
+  - name: MH
+    units: GeV
+    value: '125.38'
+  values:
+  - value: 1.0
+  - value: -0.17
+  - value: -0.056
+  - value: 0.026
+  - value: -0.17
+  - value: 1.0
+  - value: 0.032
+  - value: 0.005
+  - value: -0.056
+  - value: 0.032
+  - value: 1.0
+  - value: -0.063
+  - value: 0.026
+  - value: 0.005
+  - value: -0.063
+  - value: 1.0
+independent_variables:
+- header:
+    name: Parameter (x)
+  values:
+  - value: $\mu_{ggH}$
+  - value: $\mu_{ggH}$
+  - value: $\mu_{ggH}$
+  - value: $\mu_{ggH}$
+  - value: $\mu_{VBF}$
+  - value: $\mu_{VBF}$
+  - value: $\mu_{VBF}$
+  - value: $\mu_{VBF}$
+  - value: $\mu_{VH}$
+  - value: $\mu_{VH}$
+  - value: $\mu_{VH}$
+  - value: $\mu_{VH}$
+  - value: $\mu_{top}$
+  - value: $\mu_{top}$
+  - value: $\mu_{top}$
+  - value: $\mu_{top}$
+- header:
+    name: Parameter (y)
+  values:
+  - value: $\mu_{ggH}$
+  - value: $\mu_{VBF}$
+  - value: $\mu_{VH}$
+  - value: $\mu_{top}$
+  - value: $\mu_{ggH}$
+  - value: $\mu_{VBF}$
+  - value: $\mu_{VH}$
+  - value: $\mu_{top}$
+  - value: $\mu_{ggH}$
+  - value: $\mu_{VBF}$
+  - value: $\mu_{VH}$
+  - value: $\mu_{top}$
+  - value: $\mu_{ggH}$
+  - value: $\mu_{VBF}$
+  - value: $\mu_{VH}$
+  - value: $\mu_{top}$
