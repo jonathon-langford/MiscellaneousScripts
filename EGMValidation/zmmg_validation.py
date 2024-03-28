@@ -49,7 +49,10 @@ def get_options():
     parser.add_option('--do-hepml-rwgt', dest='do_hepml_rwgt', default=False, action="store_true", help="Reweight MC to data in quantile_features using hep_ml package")
     parser.add_option('--do-hepml-rwgt-twostep', dest='do_hepml_rwgt_twostep', default=False, action="store_true", help="Reweight MC to data in quantile_features using hep_ml package with two-step procedure")
     parser.add_option('--do-correction-factor-plot', dest='do_correction_factor_plot', default=False, action="store_true", help="Plot histogram of correction factors")
+    parser.add_option('--do-plots', dest='do_plots', default=False, action="store_true", help="Plots")
     parser.add_option('--skip-norm-fix', dest='skip_norm_fix', default=False, action="store_true", help="Skip norm fix")
+    parser.add_option('--add-mvaID-cut', dest='add_mvaID_cut', default=False, action="store_true", help="Add MVA cut")
+    parser.add_option('--add-pre-mvaID-cut', dest='add_pre_mvaID_cut', default=False, action="store_true", help="Add MVA cut prior to normalisation")
     parser.add_option('--ratio-lim', dest='ratio_lim', default=None, help="y-axis range e.g. -0.1,2. If None will estimate from data")
     parser.add_option('--figsize', dest='figsize', default="10,12", help="Figure size")
     parser.add_option('--fontsize', dest='fontsize', default="cms_title:22", help="Comma-separated list")
@@ -85,6 +88,8 @@ for file_data in opt.data.split(","):
     df = pd.read_parquet(file_data, engine="pyarrow", columns=columns_data)
     # Apply cuts:
     mask = df['Rho_fixedGridRhoAll']==df['Rho_fixedGridRhoAll']
+    if opt.add_pre_mvaID_cut:
+        mask *= df['photon_mvaID'] > -0.8
     if opt.eta_region == "EB":
         mask *= abs(df['photon_ScEta']) < 1.5
     elif opt.eta_region == "EEplus":
@@ -102,6 +107,8 @@ for file_mc in opt.mc.split(","):
     df = pd.read_parquet(file_mc, engine="pyarrow", columns=columns_mc)
     # Apply cuts:
     mask = df['Rho_fixedGridRhoAll']==df['Rho_fixedGridRhoAll']
+    if opt.add_pre_mvaID_cut:
+        mask *= (df['photon_mvaID'] > -0.8)|(df['photon_mvaID_raw'] > -0.8)
     if opt.eta_region == "EB":
         mask *= abs(df['photon_ScEta']) < 1.5
     elif opt.eta_region == "EEplus":
@@ -145,7 +152,7 @@ if opt.do_hepml_rwgt:
 if opt.do_hepml_rwgt_twostep:
     print(" --> Doing kinematic reweighting (hep_ml, 2-step)")
     xa = "Rho_fixedGridRhoAll"
-    reweighter_a = BinsReweighter(n_bins=3000, n_neighs=0)
+    reweighter_a = BinsReweighter(n_bins=200, n_neighs=0)
     reweighter_a.fit(original=dfs['mc'][xa], target=dfs['data'][xa], 
         original_weight=dfs['mc']['weight'], target_weight=dfs['data']['weight']
     )
@@ -155,9 +162,9 @@ if opt.do_hepml_rwgt_twostep:
     rwgt_a *= norm_sf
     xb = ['photon_pt','photon_eta']
     if opt.eta_region in ['EEplus','EEminus']:
-        reweighter_b = BinsReweighter(n_bins=50, n_neighs=0)
+        reweighter_b = BinsReweighter(n_bins=10, n_neighs=0)
     else:
-        reweighter_b = BinsReweighter(n_bins=100, n_neighs=0)
+        reweighter_b = BinsReweighter(n_bins=20, n_neighs=0)
     reweighter_b.fit(original=dfs['mc'][xb], target=dfs['data'][xb],                                
         original_weight=dfs['mc']['weight']*rwgt_a, target_weight=dfs['data']['weight']
     )
@@ -206,163 +213,187 @@ if opt.do_correction_factor_plot:
     fig.savefig(f"{opt.plot_path}/zmmg.{opt.eta_region}.{xvar_name}{ext_str}.log.pdf", bbox_inches="tight")
     fig.savefig(f"{opt.plot_path}/zmmg.{opt.eta_region}.{xvar_name}{ext_str}.log.png", bbox_inches="tight")
 
-# Build figure and axes`
-axs = []
-fig_width, fig_height = float(opt.figsize.split(",")[0]),float(opt.figsize.split(",")[1])
-fig = plt.figure(figsize=(fig_width,fig_height))
-left, width = 0.1, 0.88
-bottom = 0.1
-# Ratio plot
-height = 0.2
-ax = fig.add_axes([left,bottom,width,height])
-axs.append(ax)
-# Main plot
-bottom += height + 0.05
-height = 0.63
-ax = fig.add_axes([left,bottom,width,height])
-axs.append(ax)
-
-# Store chi2_ndof to plot summary
-chi2_ndof_summary = {}
-
-for xvar in opt.xvars.split(","):
-    print(f" --> Plotting variable: {xvar}")
-    bins = xvar_bin_map[xvar]
-    if xvar not in ['photon_pt','photon_eta','Rho_fixedGridRhoAll']:
-        if opt.eta_region in ['EEplus','EEminus']:
-            bins = 10
-    if xvar in xvar_range_map[opt.eta_region]:
-        xrange = xvar_range_map[opt.eta_region][xvar]
-    else:
-        xrange = (dfs['data'][xvar].min(),dfs['data'][xvar].max())
-    do_mc_over_data_ratio = True
+if opt.do_plots:
+    # Build figure and axes`
+    axs = []
+    fig_width, fig_height = float(opt.figsize.split(",")[0]),float(opt.figsize.split(",")[1])
+    fig = plt.figure(figsize=(fig_width,fig_height))
+    left, width = 0.1, 0.88
+    bottom = 0.1
+    # Ratio plot
+    height = 0.2
+    ax = fig.add_axes([left,bottom,width,height])
+    axs.append(ax)
+    # Main plot
+    bottom += height + 0.05
+    height = 0.63
+    ax = fig.add_axes([left,bottom,width,height])
+    axs.append(ax)
     
-    # Data histogram
-    hists = {}
-    hists['data'] = np.histogram(dfs['data'][xvar], bins=bins, range=xrange, weights=dfs['data']['weight'])
-    bin_centers = (hists['data'][1][:-1]+hists['data'][1][1:])/2
-    bin_widths = (hists['data'][1][1:]-hists['data'][1][:-1])/2
-    counts = hists['data'][0]
+    # Store chi2_ndof to plot summary
+    chi2_ndof_summary = {}
     
-    if xvar in ['photon_pt','photon_eta','Rho_fixedGridRhoAll']:
-        mc_types = ['pre','nominal','nn']
-    else:
-        mc_types = ['nominal','nn','flow']
-    
-    weights = {}
-    chi2_ndof = {}
-    for mc_type in mc_types:
-        if mc_type == "pre": 
-            xvar_name = translate(xvar, xvar_input_name_map)
-            weights[mc_type] = dfs['mc']['weight']
-        elif mc_type == "nominal":
-            xvar_name = translate(xvar, xvar_input_name_map)
-            weights[mc_type] = dfs['mc']['weight']*dfs['mc']['hepml_rwgt']
-        elif mc_type == "nn":
-            xvar_name = translate(xvar, xvar_input_name_map)
-            weights[mc_type] = dfs['mc']['weight']*dfs['mc']['hepml_rwgt']*dfs['mc']['photon_egmReweightingFactor']
-        elif mc_type == "flow":
-            xvar_name = xvar
-            weights[mc_type] = dfs['mc']['weight']*dfs['mc']['hepml_rwgt']
-    
-        hists[f"mc_{mc_type}"] = axs[1].hist(dfs['mc'][xvar_name], bins=bins, range=xrange, weights=weights[mc_type], color=color_map[f'mc_{mc_type}'], histtype='step')
-        hists[f"mc_{mc_type}_sumw2"] = np.histogram(dfs['mc'][xvar_name], bins=bins, range=xrange, weights=weights[mc_type]**2)
- 
-        # Calculate chi2 and add to dict
-        c = (counts-hists[f"mc_{mc_type}"][0])**2 / (hists[f"mc_{mc_type}_sumw2"][0]+counts)
-        # Remove Nan: divide by zero error
-        c = c[c==c]
-        chi2_ndof[f"mc_{mc_type}"] = c.sum() / len(c) 
-
-        # Calculate chi2 w.r.t. nominal stat uncertainty for mc_type == nn
-        if mc_type == "nn":
-            c = (counts-hists[f"mc_{mc_type}"][0])**2 / (hists[f"mc_nominal_sumw2"][0]+counts)
-            c = c[c==c]
-            chi2_ndof[f"mc_{mc_type}_rescal"] = c.sum() / len(c)
-    
-        # Add stat unc boxes
-        for i in range(len(bin_widths)):
-            point = (bin_centers[i]-bin_widths[i],hists[f"mc_{mc_type}"][0][i]-hists[f"mc_{mc_type}_sumw2"][0][i]**0.5)
-            rect = matplotlib.patches.Rectangle(point, 2*bin_widths[i], 2*hists[f"mc_{mc_type}_sumw2"][0][i]**0.5, color=color_map[f'mc_{mc_type}'], alpha=0.3)
-            axs[1].add_patch(rect)
-    
-        # Add ratio 
-        if do_mc_over_data_ratio:
-            ratio = hists[f"mc_{mc_type}"][0]/counts
-            err = hists[f"mc_{mc_type}_sumw2"][0]**0.5/counts
-            for i in range(len(bin_widths)):
-                x = (bin_centers[i]-bin_widths[i], bin_centers[i]+bin_widths[i])
-                y = (ratio[i],ratio[i])
-                axs[0].plot(x, y, color=color_map[f'mc_{mc_type}'])
-                point = (bin_centers[i]-bin_widths[i], ratio[i]-err[i])
-                rect = matplotlib.patches.Rectangle(point, 2*bin_widths[i], 2*err[i], color=color_map[f'mc_{mc_type}'], alpha=0.3)
-                axs[0].add_patch(rect)
-
-    axs[1].errorbar(bin_centers, counts, yerr=counts**0.5, ls='None', color=color_map['data'], capsize=2, linewidth=plot_options_map['data_linewidth'], marker='o', markersize=8, label="Data")
-    if do_mc_over_data_ratio:
-        axs[0].errorbar(bin_centers, np.ones_like(counts), yerr=counts**0.5/counts, ls='None', color=color_map['data'], capsize=2, linewidth=plot_options_map['data_linewidth'], marker='o', markersize=8)
-    
-    axs[0].set_xlim(xrange)
-    axs[1].set_xlim(xrange)
-    if xvar in logy_variables:
-        axs[1].set_ylim(1e3,axs[1].get_ylim()[1]*2)
-        axs[1].set_yscale("log")
-    else:
-        axs[1].set_ylim(0,axs[1].get_ylim()[1]*1.1)
-    axs[0].set_xlabel(translate(xvar,xvar_label_map))
-    if do_mc_over_data_ratio:
-        axs[0].set_ylabel("MC / data", fontsize=fontsize_map['y_label'], loc='center')
-    axs[1].set_ylabel("Events", fontsize=fontsize_map['y_label'])
-    if opt.ratio_lim is not None:
-        rmin, rmax = float(opt.ratio_lim.split(",")[0]), float(opt.ratio_lim.split(",")[1])
-        axs[0].set_ylim(rmin,rmax)
-    else:
-        axs[0].set_ylim(0.75,1.25)
-    axs[0].axhline(1, color='grey', alpha=0.5)
-    
-    # Add legend
-    handles, labels = axs[1].get_legend_handles_labels()
-    for mc_type in mc_types:
-        line = matplotlib.lines.Line2D([],[], color=color_map[f'mc_{mc_type}'], linewidth=2)
-        rect = matplotlib.patches.Rectangle((0,0), 0, 0, facecolor=color_map[f'mc_{mc_type}'], alpha=0.3)
-        handle = (line,rect)
-        handles.append(handle)
-        c = chi2_ndof[f'mc_{mc_type}']
-        chi2_str = "$\\chi^2_{d.o.f}$"
-        if mc_type == "nn":
-            c_rescal = chi2_ndof[f'mc_{mc_type}_rescal']
-            labels.append(label_map[mc_type] + f" : {chi2_str} = {c:.2f} ({c_rescal:.2f})")
+    for xvar in opt.xvars.split(","):
+        print(f" --> Plotting variable: {xvar}")
+        bins = xvar_bin_map[xvar]
+        if xvar not in ['photon_pt','photon_eta','Rho_fixedGridRhoAll']:
+            if opt.eta_region in ['EEplus','EEminus']:
+                bins = 10
+        if xvar in xvar_range_map[opt.eta_region]:
+            xrange = xvar_range_map[opt.eta_region][xvar]
         else:
-            labels.append(label_map[mc_type] + f" : {chi2_str} = {c:.2f}")
-    # Add dummy for eta region
-    line = matplotlib.lines.Line2D([],[], color="white", linewidth=0)
-    handles.append(line)
-    eta_region_str = "Z$\\rightarrow\\mu\\mu\\gamma$ (TnP), $\\eta$ region: "
-    if opt.eta_region == "inclusive":
-        eta_region_str += "inclusive"
-    elif opt.eta_region == "EB":
-        eta_region_str += "EB"
-    elif opt.eta_region == "EEplus":
-        eta_region_str += "EE+"
-    elif opt.eta_region == "EEminus":
-        eta_region_str += "EE-"
-    labels.append(eta_region_str)
-    axs[1].legend(handles, labels, loc='best', fontsize=fontsize_map['legend'], facecolor='white', edgecolor='black', frameon=True)
+            xrange = (dfs['data'][xvar].min(),dfs['data'][xvar].max())
+        do_mc_over_data_ratio = True
+        
+        # Data histogram
+        hists = {}
+        mask = (dfs['data'][xvar]==dfs['data'][xvar])
+        if opt.add_mvaID_cut:
+            mask *= (dfs['data']['photon_mvaID'] > -0.8)
+        hists['data'] = np.histogram(dfs['data'][xvar][mask], bins=bins, range=xrange, weights=dfs['data']['weight'][mask])
+        bin_centers = (hists['data'][1][:-1]+hists['data'][1][1:])/2
+        bin_widths = (hists['data'][1][1:]-hists['data'][1][:-1])/2
+        counts = hists['data'][0]
+        
+        if xvar in ['photon_pt','photon_eta','Rho_fixedGridRhoAll']:
+            mc_types = ['pre','nominal','nn']
+        else:
+            mc_types = ['nominal','nn','flow']
+        
+        weights = {}
+        chi2_ndof = {}
+        for mc_type in mc_types:
+            mask = dfs['mc']['weight']==dfs['mc']['weight']
+            if mc_type == "pre": 
+                xvar_name = translate(xvar, xvar_input_name_map)
+                if opt.add_mvaID_cut:
+                    mask *= dfs['mc']['photon_mvaID_raw'] > -0.8
+                weights[mc_type] = dfs['mc']['weight']
+
+            elif mc_type == "nominal":
+                xvar_name = translate(xvar, xvar_input_name_map)
+                if opt.add_mvaID_cut:
+                    mask *= dfs['mc']['photon_mvaID_raw'] > -0.8
+                weights[mc_type] = dfs['mc']['weight']*dfs['mc']['hepml_rwgt']
+                
+
+            elif mc_type == "nn":
+                xvar_name = translate(xvar, xvar_input_name_map)
+                weights[mc_type] = dfs['mc']['weight']*dfs['mc']['hepml_rwgt']*dfs['mc']['photon_egmReweightingFactor']
+                if opt.add_mvaID_cut:
+                    mask *= dfs['mc']['photon_mvaID_raw'] > -0.8
+
+            elif mc_type == "flow":
+                xvar_name = xvar
+                weights[mc_type] = dfs['mc']['weight']*dfs['mc']['hepml_rwgt']
+                if opt.add_mvaID_cut:
+                    mask *= dfs['mc']['photon_mvaID'] > -0.8
+        
+            weights[mc_type] = weights[mc_type][mask]
+            hists[f"mc_{mc_type}"] = axs[1].hist(dfs['mc'][xvar_name][mask], bins=bins, range=xrange, weights=weights[mc_type], color=color_map[f'mc_{mc_type}'], histtype='step')
+            hists[f"mc_{mc_type}_sumw2"] = np.histogram(dfs['mc'][xvar_name][mask], bins=bins, range=xrange, weights=weights[mc_type]**2)
+     
+            # Calculate chi2 and add to dict
+            c = (counts-hists[f"mc_{mc_type}"][0])**2 / (hists[f"mc_{mc_type}_sumw2"][0]+counts)
+            # Remove Nan: divide by zero error
+            mask = (c==c)&(counts!=0)
+            c = c[mask]
+            chi2_ndof[f"mc_{mc_type}"] = c.sum() / len(c) 
     
-    # Add text values to plot 
-    mplhep.cms.label(llabel=opt.cms_label, ax=axs[1], rlabel="26.67 fb$^{-1}$, 2022 postEE (13 TeV)", fontsize=fontsize_map['cms_title'])
+            # Calculate chi2 w.r.t. nominal stat uncertainty for mc_type == nn
+            if mc_type == "nn":
+                c = (counts-hists[f"mc_{mc_type}"][0])**2 / (hists[f"mc_nominal_sumw2"][0]+counts)
+                mask = (c==c)&(counts!=0)
+                c = c[mask]
+                chi2_ndof[f"mc_{mc_type}_rescal"] = c.sum() / len(c)
+        
+            # Add stat unc boxes
+            for i in range(len(bin_widths)):
+                point = (bin_centers[i]-bin_widths[i],hists[f"mc_{mc_type}"][0][i]-hists[f"mc_{mc_type}_sumw2"][0][i]**0.5)
+                rect = matplotlib.patches.Rectangle(point, 2*bin_widths[i], 2*hists[f"mc_{mc_type}_sumw2"][0][i]**0.5, color=color_map[f'mc_{mc_type}'], alpha=0.3)
+                axs[1].add_patch(rect)
+        
+            # Add ratio 
+            if do_mc_over_data_ratio:
+                ratio = hists[f"mc_{mc_type}"][0]/counts
+                err = hists[f"mc_{mc_type}_sumw2"][0]**0.5/counts
+                for i in range(len(bin_widths)):
+                    x = (bin_centers[i]-bin_widths[i], bin_centers[i]+bin_widths[i])
+                    y = (ratio[i],ratio[i])
+                    axs[0].plot(x, y, color=color_map[f'mc_{mc_type}'])
+                    point = (bin_centers[i]-bin_widths[i], ratio[i]-err[i])
+                    rect = matplotlib.patches.Rectangle(point, 2*bin_widths[i], 2*err[i], color=color_map[f'mc_{mc_type}'], alpha=0.3)
+                    axs[0].add_patch(rect)
     
-    # Save plot 
+        axs[1].errorbar(bin_centers, counts, yerr=counts**0.5, ls='None', color=color_map['data'], capsize=2, linewidth=plot_options_map['data_linewidth'], marker='o', markersize=8, label="Data")
+        if do_mc_over_data_ratio:
+            axs[0].errorbar(bin_centers, np.ones_like(counts), yerr=counts**0.5/counts, ls='None', color=color_map['data'], capsize=2, linewidth=plot_options_map['data_linewidth'], marker='o', markersize=8)
+        
+        axs[0].set_xlim(xrange)
+        axs[1].set_xlim(xrange)
+        if xvar in logy_variables:
+            axs[1].set_ylim(1e3,axs[1].get_ylim()[1]*2)
+            axs[1].set_yscale("log")
+        else:
+            axs[1].set_ylim(0,axs[1].get_ylim()[1]*1.1)
+        axs[0].set_xlabel(translate(xvar,xvar_label_map))
+        if do_mc_over_data_ratio:
+            axs[0].set_ylabel("MC / data", fontsize=fontsize_map['y_label'], loc='center')
+        axs[1].set_ylabel("Events", fontsize=fontsize_map['y_label'])
+        if opt.ratio_lim is not None:
+            rmin, rmax = float(opt.ratio_lim.split(",")[0]), float(opt.ratio_lim.split(",")[1])
+            axs[0].set_ylim(rmin,rmax)
+        else:
+            axs[0].set_ylim(0.75,1.25)
+        axs[0].axhline(1, color='grey', alpha=0.5)
+
+        if (opt.add_mvaID_cut)|(opt.add_pre_mvaID_cut):
+            if xvar == "Photon_mvaID":
+                axs[1].axvline(-0.8, color='black', alpha=0.5, ls='--') 
+        
+        # Add legend
+        handles, labels = axs[1].get_legend_handles_labels()
+        for mc_type in mc_types:
+            line = matplotlib.lines.Line2D([],[], color=color_map[f'mc_{mc_type}'], linewidth=2)
+            rect = matplotlib.patches.Rectangle((0,0), 0, 0, facecolor=color_map[f'mc_{mc_type}'], alpha=0.3)
+            handle = (line,rect)
+            handles.append(handle)
+            c = chi2_ndof[f'mc_{mc_type}']
+            chi2_str = "$\\chi^2_{d.o.f}$"
+            if mc_type == "nn":
+                c_rescal = chi2_ndof[f'mc_{mc_type}_rescal']
+                labels.append(label_map[mc_type] + f" : {chi2_str} = {c:.2f} ({c_rescal:.2f})")
+            else:
+                labels.append(label_map[mc_type] + f" : {chi2_str} = {c:.2f}")
+        # Add dummy for eta region
+        line = matplotlib.lines.Line2D([],[], color="white", linewidth=0)
+        handles.append(line)
+        eta_region_str = "Z$\\rightarrow\\mu\\mu\\gamma$ (TnP), $\\eta$ region: "
+        if opt.eta_region == "inclusive":
+            eta_region_str += "inclusive"
+        elif opt.eta_region == "EB":
+            eta_region_str += "EB"
+        elif opt.eta_region == "EEplus":
+            eta_region_str += "EE+"
+        elif opt.eta_region == "EEminus":
+            eta_region_str += "EE-"
+        labels.append(eta_region_str)
+        axs[1].legend(handles, labels, loc='best', fontsize=fontsize_map['legend'], facecolor='white', edgecolor='black', frameon=True)
+        
+        # Add text values to plot 
+        mplhep.cms.label(llabel=opt.cms_label, ax=axs[1], rlabel="26.67 fb$^{-1}$, 2022 postEE (13 TeV)", fontsize=fontsize_map['cms_title'])
+        
+        # Save plot 
+        ext_str = f".{opt.ext}" if opt.ext != "" else ""
+        fig.savefig(f"{opt.plot_path}/zmmg.{opt.eta_region}.{xvar}{ext_str}.pdf", bbox_inches="tight")
+        fig.savefig(f"{opt.plot_path}/zmmg.{opt.eta_region}.{xvar}{ext_str}.png", bbox_inches="tight")
+
+        axs[0].cla()
+        axs[1].cla()
+
+        chi2_ndof_summary[xvar] = chi2_ndof
+
     ext_str = f".{opt.ext}" if opt.ext != "" else ""
-    fig.savefig(f"{opt.plot_path}/zmmg.{opt.eta_region}.{xvar}{ext_str}.pdf", bbox_inches="tight")
-    fig.savefig(f"{opt.plot_path}/zmmg.{opt.eta_region}.{xvar}{ext_str}.png", bbox_inches="tight")
-
-    axs[0].cla()
-    axs[1].cla()
-
-    chi2_ndof_summary[xvar] = chi2_ndof
-
-ext_str = f".{opt.ext}" if opt.ext != "" else ""
-with open(f"zmmg.{opt.eta_region}.chi2_ndof_summary{ext_str}.json", "w") as jf:
-    json.dump(chi2_ndof_summary, jf, indent=4)
+    with open(f"zmmg.{opt.eta_region}.chi2_ndof_summary{ext_str}.json", "w") as jf:
+        json.dump(chi2_ndof_summary, jf, indent=4)
 

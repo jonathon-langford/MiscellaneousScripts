@@ -115,7 +115,45 @@ xvar_label_map = {
     "photon_esEnergyOverRawE" : "Photon esEnergyOverRawE",
     "photon_hcalPFClusterIso" : "Photon HCALPFClusterIso",
     "photon_mvaID" : "Photon mvaID",
-    "photon_energyErr" : "Photon $\\sigma_{E}$"
+    "photon_energyErr" : "Photon $\\sigma_{E}$",
+    "lead_pt" : "Lead $p_T$ (GeV)",
+    "lead_eta" : "Lead $\\eta$",
+    "lead_r9" : "Lead R$_{9}$",
+    "lead_sieie" : "Lead $\\sigma_{i{\\eta}i{\\eta}}$",
+    "lead_etaWidth" : "Lead $\\eta$ width",
+    "lead_phiWidth" : "Lead $\\phi$ width",
+    "lead_sieip" : "Lead $\\sigma_{i{\\eta}i{\\phi}}$",
+    "lead_s4" : "Lead S$_{4}$",
+    "lead_hoe" : "Lead H/E",
+    "lead_ecalPFClusterIso" : "Lead ECALPFClusterIso",
+    "lead_trkSumPtHollowConeDR03" : "Lead trkSumPtHollowConeDR03",
+    "lead_trkSumPtSolidConeDR04" : "Lead trkSumPtHollowConeDR04",
+    "lead_pfChargedIso" : "Lead PFChargedIso",
+    "lead_pfChargedIsoWorstVtx" : "Lead PFChargedIso (worst vtx)",
+    "lead_esEffSigmaRR" : "Lead esEffSigmaRR",
+    "lead_esEnergyOverRawE" : "Lead esEnergyOverRawE",
+    "lead_hcalPFClusterIso" : "Lead HCALPFClusterIso",
+    "lead_mvaID" : "Lead mvaID",
+    "lead_energyErr" : "Lead $\\sigma_{E}$",
+    "sublead_pt" : "Sublead $p_T$ (GeV)",
+    "sublead_eta" : "Sublead $\\eta$",
+    "sublead_r9" : "Sublead R$_{9}$",
+    "sublead_sieie" : "Sublead $\\sigma_{i{\\eta}i{\\eta}}$",
+    "sublead_etaWidth" : "Sublead $\\eta$ width",
+    "sublead_phiWidth" : "Sublead $\\phi$ width",
+    "sublead_sieip" : "Sublead $\\sigma_{i{\\eta}i{\\phi}}$",
+    "sublead_s4" : "Sublead S$_{4}$",
+    "sublead_hoe" : "Sublead H/E",
+    "sublead_ecalPFClusterIso" : "Sublead ECALPFClusterIso",
+    "sublead_trkSumPtHollowConeDR03" : "Sublead trkSumPtHollowConeDR03",
+    "sublead_trkSumPtSolidConeDR04" : "Sublead trkSumPtHollowConeDR04",
+    "sublead_pfChargedIso" : "Sublead PFChargedIso",
+    "sublead_pfChargedIsoWorstVtx" : "Sublead PFChargedIso (worst vtx)",
+    "sublead_esEffSigmaRR" : "Sublead esEffSigmaRR",
+    "sublead_esEnergyOverRawE" : "Sublead esEnergyOverRawE",
+    "sublead_hcalPFClusterIso" : "Sublead HCALPFClusterIso",
+    "sublead_mvaID" : "Sublead mvaID",
+    "sublead_energyErr" : "Sublead $\\sigma_{E}$"
 }
 
 xvar_bin_map = {
@@ -142,23 +180,23 @@ xvar_bin_map = {
     "photon_pt" : 20,
     "photon_eta" : 20,
     "Rho_fixedGridRhoAll" : 20,
-    "photon_r9" : 10,
-    "photon_sieie" : 10,
-    "photon_etaWidth" : 10,
-    "photon_phiWidth" : 10,
-    "photon_sieip" : 10,
-    "photon_s4" : 10,
-    "photon_hoe" : 10,
-    "photon_ecalPFClusterIso" : 10,
-    "photon_trkSumPtHollowConeDR03" : 10,
-    "photon_trkSumPtSolidConeDR04" : 10,
-    "photon_pfChargedIso" : 10,
-    "photon_pfChargedIsoWorstVtx" : 10,
-    "photon_esEffSigmaRR" : 10,
-    "photon_esEnergyOverRawE" : 10,
-    "photon_hcalPFClusterIso" : 10, 
-    "photon_mvaID" : 10,
-    "photon_energyErr" : 10
+    "photon_r9" : 20,
+    "photon_sieie" : 20,
+    "photon_etaWidth" : 20,
+    "photon_phiWidth" : 20,
+    "photon_sieip" : 20,
+    "photon_s4" : 20,
+    "photon_hoe" : 20,
+    "photon_ecalPFClusterIso" : 20,
+    "photon_trkSumPtHollowConeDR03" : 20,
+    "photon_trkSumPtSolidConeDR04" : 20,
+    "photon_pfChargedIso" : 20,
+    "photon_pfChargedIsoWorstVtx" : 20,
+    "photon_esEffSigmaRR" : 20,
+    "photon_esEnergyOverRawE" : 20,
+    "photon_hcalPFClusterIso" : 20, 
+    "photon_mvaID" : 20,
+    "photon_energyErr" : 20
 }
 
 xvar_range_map = {
@@ -224,7 +262,7 @@ xvar_range_map = {
         "probe_esEnergyOverRawE" : (0,0.3),
         "probe_hcalPFClusterIso" : (0,12),
         "probe_mvaID" : (-1,1),
-        "probe_energyErr" : (0,3),
+        "probe_energyErr" : (0,8),
         "photon_pt" : (20,100),
         "photon_eta" : (1.5,2.7),
         "Rho_fixedGridRhoAll" : (0,60),
@@ -244,7 +282,7 @@ xvar_range_map = {
         "photon_esEnergyOverRawE" : (0,0.3),
         "photon_hcalPFClusterIso" : (0,12),
         "photon_mvaID" : (-1,1),
-        "photon_energyErr" : (0,3)
+        "photon_energyErr" : (0,8)
     },
     "EEminus": {
         "probe_pt" : (20,100),
@@ -266,7 +304,7 @@ xvar_range_map = {
         "probe_esEnergyOverRawE" : (0,0.3),
         "probe_hcalPFClusterIso" : (0,12),
         "probe_mvaID" : (-1,1),
-        "probe_energyErr" : (0,3),
+        "probe_energyErr" : (0,8),
         "photon_pt" : (20,100),
         "photon_eta" : (-2.7,-1.5),
         "Rho_fixedGridRhoAll" : (0,60),
@@ -286,7 +324,7 @@ xvar_range_map = {
         "photon_esEnergyOverRawE" : (0,0.3),
         "photon_hcalPFClusterIso" : (0,12),
         "photon_mvaID" : (-1,1),
-        "photon_energyErr" : (0,3)
+        "photon_energyErr" : (0,8)
     }
 }
 
@@ -323,8 +361,26 @@ xvar_input_name_map = {
     "photon_esEffSigmaRR" : "photon_raw_esEffSigmaRR",
     "photon_esEnergyOverRawE" : "photon_raw_esEnergyOverRawE",
     "photon_hcalPFClusterIso" : "photon_raw_hcalPFClusterIso",
-    "photon_mvaID" : "photon_mvaID_nano",
-    "photon_energyErr" : "photon_raw_energyErr"
+    "photon_mvaID" : "photon_mvaID_raw",
+    "photon_energyErr" : "photon_raw_energyErr",
+    "r9" : "raw_r9",
+    "sieie" : "raw_sieie",
+    "etaWidth" : "raw_etaWidth",
+    "phiWidth" : "raw_phiWidth",
+    "sieip" : "raw_sieip",
+    "s4" : "raw_s4",
+    "hoe" : "raw_hoe",
+    "ecalPFClusterIso" : "raw_ecalPFClusterIso",
+    "trkSumPtHollowConeDR03" : "raw_trkSumPtHollowConeDR03",
+    "trkSumPtSolidConeDR04" : "raw_trkSumPtSolidConeDR04",
+    "pfChargedIso" : "raw_pfChargedIso",
+    "pfChargedIsoWorstVtx" : "raw_pfChargedIsoWorstVtx",
+    "esEffSigmaRR" : "raw_esEffSigmaRR",
+    "esEnergyOverRawE" : "raw_esEnergyOverRawE",
+    "hcalPFClusterIso" : "raw_hcalPFClusterIso",
+    "mvaID" : "mvaID_nano",
+    "energyErr" : "raw_energyErr",
+
 }
 
 logy_variables = ["probe_ecalPFClusterIso","probe_trkSumPtHollowConeDR03","probe_trkSumPtSolidConeDR04","probe_pfChargedIso","probe_pfChargedIsoWorstVtx","probe_esEffSigmaRR","probe_esEnergyOverRawE","probe_hcalPFClusterIso","photon_ecalPFClusterIso","photon_trkSumPtHollowConeDR03","photon_trkSumPtSolidConeDR04","photon_pfChargedIso","photon_pfChargedIsoWorstVtx","photon_esEffSigmaRR","photon_esEnergyOverRawE","photon_hcalPFClusterIso"]
